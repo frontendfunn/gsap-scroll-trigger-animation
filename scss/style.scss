@@ -1,0 +1,153 @@
+// scss/style.scss -> which converted to css/style.css
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+// random google font
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+$orange: #fa6400;
+$halfWhite: #f9f9f9;
+
+.home_hero {
+  background-color: $halfWhite;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  .jumbotron {
+    background-color: transparent;
+    margin-bottom: 0;
+  }
+  .hero_title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  .hero_subtitle {
+    text-align: center;
+    color: lighten(#000000, 50%);
+    line-height: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .hero_btns {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .btn {
+      padding: 12px 24px;
+      margin: 12px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+      &:hover {
+        box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.15);
+      }
+    }
+    .pricing_btn {
+      background-color: #ffffff;
+      border: 1px solid $orange;
+      color: $orange;
+    }
+    .try_btn {
+      background-color: $orange;
+      color: #ffffff;
+      &:hover {
+        background-color: darken($orange, 2%);
+      }
+    }
+  }
+  .hero_heading_small {
+    color: $orange;
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// how it works
+.how_it_works {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  overflow: hidden;
+  .step {
+    position: relative;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    .step_heading_small {
+      color: $orange;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .step_heading {
+      font-size: 3rem;
+      font-weight: 500;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+    .step_description {
+      font-size: 1.2rem;
+      line-height: 2rem;
+      color: lighten(#000000, 40%);
+    }
+    .product_image {
+      padding-top: 3rem;
+      height: 100%;
+      padding-bottom: 3rem;
+    }
+  }
+}
+
+// using media query to handle image on desktop
+@media (min-width: 992px) {
+  .how_it_works .step {
+    // adding more padding on top and bottom
+    padding-top: 17rem;
+    padding-bottom: 17rem;
+    max-height: 700px;
+  }
+  .product_image_container {
+    position: absolute;
+    left: 50%;
+    top: -5%;
+    bottom: -5%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    .product_image {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      .img-fluid {
+        height: 100%;
+        max-width: none;
+      }
+    }
+  }
+}
+
+// lets add footer styles
+footer {
+  background-color: lighten($color: #000000, $amount: 10);
+  padding-top: 3rem;
+  .footer_title {
+    color: $orange;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .footer_description {
+    font-size: 0.875rem;
+    color: $halfWhite;
+  }
+  .nav-link {
+    padding-left: 0;
+    padding-right: 0;
+    color: $halfWhite;
+  }
+  .copyright {
+    border-top: 1px solid rgba($orange, 0.2);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    color: $orange;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+}
